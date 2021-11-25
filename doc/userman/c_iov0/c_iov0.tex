@@ -7,4 +7,94 @@
 \section{Overview of the Library}
 \label{ciov0:sdpr0}
 
+\label{ciov0:sdpr0}
+
+%LaTeX won't substitute into \index{} below, so had to use the expanded
+%name.
+\index{UCULIB@\emph{UCULIB}}The library described in this document, the 
+\emph{\productbasenamelong{}, Version \productversion{}} (identified more 
+compactly as \emph{\productbasenameshort{}-\productversion{}}, 
+\emph{\productbasenameshort{}}, or \emph{\productbasenameultrashort{}}) is 
+a \emph{C}/\emph{C++}-callable arithmetic/mathematical/cryptographic 
+software library for microcontrollers and embedded systems.
+
+The library includes functionality for: 
+
+\begin{itemize}
+\item \emph{Arithmetic:} native/\-large integer/\-fixed-point/\-large fixed-point/\-floating-point
+      addition/\-sub\-tract\-ion/\-mul\-ti\-pli\-cat\-ion/\-division.
+\item \emph{Mathematical algorithms:}
+      native/\-large integer/\-fixed-point/\-large fixed-point/\-floating-point
+      vector arithmetic, algebraic/transcendental functions.
+\item \emph{Control system elements and linear filtering:}
+      low/high-pass filtering, scaling, differentiation, integration.
+\item \emph{Non-linear filtering:}
+      discrete input debouncing, vertical counters.
+\item \emph{Non-cryptographic hashes:}
+      checksums, CRC's.
+\item \emph{Cryptographic hashes:}
+      hashes from the SHA-2 family (SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, SHA-512/256).
+\item \emph{Cryptography:}
+      ciphers, PRNGs.
+\item \emph{Bit-mapped sets:}
+      union, intersection, cardinality, iteration.
+\item \emph{Utility:}
+      block memory
+      operations, array operations.
+\end{itemize}
+
+\emph{\productbasenameshort{}} is a traditional
+library in that:
+
+\begin{itemize}
+\item The source code is arranged as one function or data structure per source file.
+\item The source code is compiled as one function or data structure per object file.
+\item Object files are combined together into a library.
+\item The linker extracts only what it needs to resolve references.  (This generally
+      gives minimum FLASH and RAM footprint.)
+\end{itemize}
+
+\emph{\productbasenameshort{}} is similar in spirit to existing libraries such as
+\emph{The GNU Multiple Precision Arithmetic Library}, but it has these features and
+characteristics so that it is more suitable for embedded software:
+
+\begin{itemize}
+\item Dynamic memory allocation is not used within the library.\footnote{It is still
+      possible for the library to operate using dynamically-allocated memory,
+      but this memory must be obtained and released by the caller.}
+\item All functions in the library operate on operands of a size known by the
+      caller, and this data size does not change as a result of any
+      library function.\footnote{All functions either accept operands of a fixed
+      size characteristic of the function, or accept some measure of size
+      as a formal parameter.}
+\item The source code for each library variant is created from templates,
+      so that the source code contains almost no C preprocessor
+      switches.  (The source code is arranged in this way for
+      easier debugging,\footnote{Some source-level debuggers are
+      confused by complex preprocessor switches.} and to remove uncertainty about what has
+      is actually being compiled or assembled.)
+\item The library can be repackaged as three source files (a \emph{.h} header file, a \emph{.c}
+      source file, and an assembly-language file with a target-specific file extension),
+      and used as two software modules within a project rather than as a library.\footnote{The
+      library source code is designed to be used in this way because some debugging tools
+      are awkward at debugging libraries.}
+\end{itemize}
+
+Additionally, \emph{\productbasenameshort{}} has these features and characteristics,
+some shared with \emph{The GNU Multiple Precision Arithmetic Library}:
+
+\begin{itemize}
+\item The library is optimized for speed.  (Assembly-language for popular
+      variants is provided, with a slower C fallback.  Fixed-size operands
+      also allow complete loop-unrolling in many cases.)
+\end{itemize}
+
+\emph{\productbasenameshort{}} is made available both as binaries and as 
+complete soure code.  It can be tuned, customized, and debugged at the 
+source code level.  
+
+\emph{\productbasenameshort{}} is thread-safe and core-safe.
+
+\emph{\productbasenameshort{}} is unit tested to MC/DC coverage, and is 
+expected to contain no software defects.  
 
