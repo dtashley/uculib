@@ -133,5 +133,10 @@
             <F N="../../comps/worknenv.tex"/>
             <F N="../../comps/workttla.tex"/>
         </Folder>
+        <Folder
+            Name="Log Files"
+            Filters="">
+            <F N="../../ucu_userman.log"/>
+        </Folder>
     </Files>
 </Project>
