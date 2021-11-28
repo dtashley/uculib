@@ -16,32 +16,37 @@ document, the \emph{\productbasenamelong{}, Version
 \emph{\productbasenameshort{}}, or 
 \emph{\productbasenameultrashort{}}) is a 
 \emph{C}/\emph{C++}-callable 
-arithmetic/mathematical/cryptographic software library for 
-microcontrollers and embedded systems.  
+arith\-me\-tic/\-math\-e\-mat\-i\-cal/\-cryp\-to\-graph\-ic 
+software library for microcontrollers and embedded systems.  
 
 The library includes functionality for: 
 
 \begin{itemize}
-\item \emph{Arithmetic:} native/\-large integer/\-fixed-point/\-large fixed-point/\-floating-point
-      addition/\-sub\-tract\-ion/\-mul\-ti\-pli\-cat\-ion/\-division.
+\item \emph{Arithmetic:}
+      native, large integer, fixed-point, large fixed-point,
+      and float\-ing-point addition, subtraction,
+      multiplication, and division.
 \item \emph{Mathematical algorithms:}
-      native/\-large integer/\-fixed-point/\-large fixed-point/\-floating-point
-      vector arithmetic, algebraic/transcendental functions.
+      native, large integer, fixed-point, large fixed-point,
+      floating-point, vector arithmetic, and algebraic 
+      and transcendental functions.
 \item \emph{Control system elements and linear filtering:}
-      low/high-pass filtering, scaling, differentiation, integration.
+      low/high-pass filtering, scaling, differentiation,
+      and integration.
 \item \emph{Non-linear filtering:}
-      discrete input debouncing, vertical counters.
+      discrete input debouncing, and vertical counters.
 \item \emph{Non-cryptographic hashes:}
       checksums, CRC's.
 \item \emph{Cryptographic hashes:}
-      hashes from the SHA-2 family (SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, SHA-512/256).
+      hashes from the SHA-2 family (SHA-224, SHA-256,
+      SHA-384, SHA-512, SHA-512/224, and SHA-512/256).
 \item \emph{Cryptography:}
-      ciphers, PRNGs.
+      ciphers and PRNGs.
 \item \emph{Bit-mapped sets:}
-      union, intersection, cardinality, iteration.
+      union, intersection, cardinality, and iteration.
 \item \emph{Utility:}
       block memory
-      operations, array operations.
+      operations and array operations.
 \end{itemize}
 
 \emph{\productbasenameshort{}} is a traditional
@@ -107,6 +112,28 @@ characteristics of the \emph{\productbasenameshort{}} are:
 \item The library is unit tested to MC/DC coverage, and is 
       expected to contain no software defects.  
 \end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Acknowledgments}
+\label{ciov0:sack0}
+ 
+TBD. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Feedback, Suggestions, and Collaboration Opportunities}
+\label{ciov0:sfbk0}
+
+I welcome all feedback and suggestions about the library and 
+documentation, and I welcome all opportunities to collaborate to extend 
+the functionality or supported platforms of the library.  
+
+Please feel free to correspond with me at \texttt{dashley@\-gmail.com}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -356,65 +383,50 @@ the set of positive integers is denoted
 \end{eqnarray}
 
 Similarly the set of real numbers is denoted 
-\index{R@$\vworkrealset$}$\vworkrealset$, and the set of non-negative real 
-numbers is denoted \index{R+@$\vworkrealsetnonneg$}$\vworkrealsetnonneg$.  
+\index{R@$\vworkrealset$}$\vworkrealset$, and the set of 
+non-negative real numbers is denoted 
+\index{R+@$\vworkrealsetnonneg$}$\vworkrealsetnonneg$.  
 
-A \index{native integer}\emph{native integer} is an integer that 
-corresponds to a \emph{C}/\emph{C++} native data type.  These are usually, 
-but not always, integers that the processor can manipulate with single 
-machine instructions.  
+A \index{native integer}\emph{native integer} is an integer 
+that corresponds to a \emph{C}/\emph{C++} native data type.  
+These are usually, but not always, integers that the 
+processor can manipulate with single machine instructions.  
 
-A \index{large integer}\emph{large integer} is an integer that is larger 
-than a \emph{C}/\emph{C++} native data type.  (In 
-\emph{\productbasenameshort{}}, large integers are usually represented as 
-arrays of native integers.  Each such native integer is called a 
-\index{limb}\emph{limb}\index{GMP Library@\emph{GMP 
-Library}}\footnote{This nomenclature comes from \emph{The GMP Library} 
-\cite{bibref:w:gmplibhomepage}.}, and the size of each limb, called the 
-\index{limb size}\emph{limb size}, is chosen based on what integer sizes 
-the processor instruction set accommodates.) 
+A \index{large integer}\emph{large integer} is an integer 
+that is larger than a \emph{C}/\emph{C++} native data type.  
+(In \emph{\productbasenameshort{}}, large integers are 
+usually represented as arrays of native integers.  Each such 
+native integer is called a \index{limb}\emph{limb}\index{GMP 
+Library@\emph{GMP Library}}\footnote{This nomenclature comes 
+from \emph{The GMP Library} 
+\cite{bibref:w:gmplibhomepage}.}, and the size of each limb, 
+called the \index{limb size}\emph{limb size}, is chosen 
+based on what integer sizes the processor instruction set 
+accommodates.) 
 
-A \index{fixed-point number}\emph{fixed-point number} is an integer where 
-each count of the integer corresponds to $1/k$, $k \in \vworkintsetpos$ in 
-the represented value.  $k$ is typically chosen to be a power of 2 so that 
-the radix point of the fixed-point number appears between two bits.  
+A \index{fixed-point number}\emph{fixed-point number} is an 
+integer where each count of the integer corresponds to 
+$1/k$, $k \in \vworkintsetpos$ in the represented value.  
+$k$ is typically chosen to be a power of 2 so that the radix 
+point of the fixed-point number appears between two bits.  
 
-A \emph{native fixed-point number} is a fixed-point number implemented using
-a native integer.  A \emph{large fixed-point number} is a fixed-point number
-implemented using a large integer.
+A \emph{native fixed-point number} is a fixed-point number 
+implemented using a native integer.  A \emph{large 
+fixed-point number} is a fixed-point number implemented 
+using a large integer.  
 
-A \index{floating-point number}\emph{floating-point number} is a number 
-containing a sign, mantissa, and exponent.  Floating-point numbers are 
-designed to be an approximate representation of $\vworkrealset$.  They 
-have a larger range than fixed-point numbers, but precision that depends 
-on the value being represented.  
+A \index{floating-point number}\emph{floating-point number} 
+is a number containing a sign, mantissa, and exponent.  
+Floating-point numbers are designed to be an approximate 
+representation of $\vworkrealset$.  They have a larger range 
+than fixed-point numbers, but precision that depends on the 
+value being represented.  
 
-A \emph{native floating-point number} is a floating-point number 
-implemented using a native floating-point data type.  A \emph{large 
-floating-point number} is a floating-point number that is larger (in terms 
-of memory storage requirements) than a native floating-point number.  
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Acknowledgments}
-\label{ciov0:sack0}
- 
-TBD. 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Feedback, Suggestions, and Collaboration Opportunities}
-\label{ciov0:sfbk0}
-
-I welcome all feedback and suggestions about the library and 
-documentation, and I welcome all opportunities to collaborate to extend 
-the functionality or supported platforms of the library.  
-
-Please feel free to correspond with me at \texttt{dashley@\-gmail.com}.
+A \emph{native floating-point number} is a floating-point 
+number implemented using a native floating-point data type.  
+A \emph{large floating-point number} is a floating-point 
+number that is larger (in terms of memory storage 
+requirements) than a native floating-point number.  
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -456,30 +468,265 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 \end{verbatim}
 \end{small}
 
-The general consensus in the open-source community 
-(and my interpretation of the license) is:
+The general consensus in the open-source community about 
+\emph{The MIT License} (and my interpretation of the 
+license) is:
 
 \begin{itemize}
 \item ``Software'' is defined in the first paragraph to 
       be restricted to the original materials made 
       available under the license.  ``Software'' does not 
-      include any binary forms created by the licensee 
-      compiling or assembling the software, or by the
-      licensee integrating these compiled or assembled forms 
-      into a product, as the binary forms are not made 
+      include any binary derivatives created by the licensee 
+      as a result of compiling or assembling the software, 
+      or created by the licensee as a result of integrating 
+      these compiled or assembled derivatives into a 
+      product, as the binary derivatives are not made 
       available under the license.
 \item The license does not require that modified versions
-      of the software source code be made public.
+      of the ``Software'' be made public.
 \item The license does not require that any copyright, 
       license, or permission information or notices be 
       retained in compiled libraries or in any binary 
-      derivatives of the software created by the licensee.
+      derivatives of the ``Software'' created by the 
+      licensee.
 \item The license does not require that the user of any 
       program or product in which compiled or assembled 
-      derivatives of the software are used be notified of 
-      the presence of derivatives of the software in the 
-      product, or be notified of any copyright, license, or 
-      permission information involving the use of the 
-      software.
+      derivatives of the ``Software'' are used be notified 
+      of the presence of derivatives of the ``Software'' in 
+      the product; or be notified of any copyright, license, 
+      or permission information involving the use of the 
+      ``Software''.
 \end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Detailed Description of this Document}
+\label{ciov0:sotd0}
+
+\emph{\textbf{Part I: General Information}} provides introductory
+and general information about \emph{\productbasenameshort{}}.
+
+\begin{itemize}
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{ciov0}: 
+      Introduction and Overview}} provides general information
+      about \emph{\productbasenameshort{}}.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{cldd0}: 
+      Detailed Description of \productbasenameshort{}}}
+      provides a detailed description 
+      of the general features and characteristics
+      of \emph{\productbasenameshort{}}\@.  The specific
+      functions and constant data structures 
+      in \emph{\productbasenameshort{}} are described in
+      Chapters \ref{cuuc0} through \ref{ccip1}.
+\end{itemize}
+
+\emph{\textbf{Part II: Technical Background}} provides mathematical and 
+technical background information useful in understanding the library.  
+
+\begin{itemize}
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{cgct0}: 
+      General Computing}} provides technical background on a variety of general 
+      computing topics.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{cbal0}: 
+      Boolean Algebra and Digital Logic}} provides technical background on 
+      Boolean algebra and its application to digital logic, simplifying software 
+      constructs, and vertical counters.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{cpta0}: 
+      Polytopes, Automata, and Timed Automata}} provides technical background 
+      related to the design of state machines and stateful systems.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{cnth0}: 
+      Number Theory}} provides technical background on number theory.  (Number 
+      theory is the branch of mathematics that deals with positive integers and 
+      their properties, and is the basis of much of modern cryptography.) 
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{crla1}: 
+      Farey Series Approximation}} provides technical background and algorithms 
+      surrounding approximating a real number with a rational number (for 
+      example, 355/113 is the best approximation to $\pi$ with numerator and 
+      denominator not exceeding 1,000).  In rare scenarios, using a rational 
+      approximation to a real number is the most efficient way to perform a 
+      calculation.  Efficiently finding the best rational approximation to a 
+      real number requires\footnote{For example, suppose it is necessary to find 
+      the best rational approximation to $\pi$ with numerator and denominator 
+      not exceeding $2^{256}-1$.  No $O(n)$ algorithm will suffice, as 
+      $2^{256}-1$ is too large.  The actual best approximation is 
+      110,\-859,\-348,\-167,\-216,\-110,\-469,\-450,\-% 
+      301,\-947,\-424,\-979,\-270,\-176,\-705,\-044,\-% 
+      426,\-927,\-758,\-107,\-559,\-970,\-506,\-471,\-% 
+      518,\-580 / 35,\-287,\-626,\-497,\-515,\-783,\-% 
+      106,\-785,\-958,\-721,\-190,\-659,\-891,\-744,\-% 
+      246,\-448,\-011,\-713,\-951,\-598,\-935,\-229,\-% 
+      278,\-291,\-942,\-269---a result that can only be obtained using the better 
+      algorithm presented in this chapter.} results from number theory, which 
+      are presented in this chapter.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{ccth0}: 
+      Coding Theory}} provides technical background on error detecting codes, 
+      error correcting codes, and other topics from coding theory.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{cnna0}: 
+      Non-Numerical Algorithms}} provides technical background on a variety 
+      non-numerical algorithms that appear in the library, such as algorithms 
+      for searching and sorting.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{caal0}: 
+      Integer Arithmetic Algorithms and Implementation}} provides technical 
+      background on integer arithmetic algorithms.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{cmal0}: 
+      Integer Mathematical Algorithms and Implementation}} provides technical 
+      background on integer mathematical algorithms.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{caal2}: 
+      Fixed-Point Arithmetic Algorithms and Implementation}} provides technical 
+      background on fixed-point arithmetic algorithms.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{cmal2}: 
+      Fixed-Point Mathematical Algorithms and Implementation}} provides 
+      technical background on fixed-point mathematical algorithms.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{craa0}: 
+      Real and Floating-Point Arithmetic Algorithms and Implementation}} 
+      provides technical background on real and floating-point arithmetic 
+      algorithms.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{crma0}: 
+      Real and Floating-Point Mathematical Algorithms and Implementation}} 
+      provides technical background on real and floating-point mathematical 
+      algorithms.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{clfc0}: 
+      Linear Filters and Control System Elements}} provides technical background 
+      on linear filters and control system elements.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{cnlf0}: 
+      Non-Linear Filters and Debouncing}} provides technical background on 
+      non-linear filters and debouncing.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{crng0}: 
+      Random and Pseudo-Random Number Generation}} provides technical background 
+      on the generation of random and pseudo-random numbers.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{cnch0}: 
+      Non-Cryptographic Hashes}} provides technical background on 
+      non-cryptographic hashes.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{cchs0}: 
+      Cryptographic Hashes}} provides technical background on cryptographic 
+      hashes.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{cskc0}: 
+      Symmetric-Key Ciphers and Algorithms}} provides technical background on 
+      symmetric key ciphers and related algorithms.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{cakc0}: 
+      Asymmetric-Key Ciphers and Algorithms}} provides technical background on 
+      asymmetric key ciphers and related algorithms.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{cmat0}: 
+      Miscellaneous Mathematical and Algorithmic Topics}} provides technical 
+      background on mathematical and algorithmic topics that could not easily be 
+      categorized elsewhere.  
+\end{itemize}
+
+\emph{\textbf{Part II: Library Documentation}} describes
+usage of the library and the actual library functions.
+
+\begin{itemize}
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{cuuc0}: 
+      How to Use \productbasenameshort{}}} explains how to use 
+      \productbasenameshort{} in a project.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{cnef0}: 
+      Utility and Miscellaneous Functions}} documents functions that provide 
+      useful non-data-driven functionality.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{cbmf0}: 
+      Block Memory Functions}} documents functions that operate on blocks of 
+      memory (setting, copying, shifting, etc.).  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{csea0}: 
+      Search Functions}} documents functions that perform searches; such as 
+      linear searches and binary searches.
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{csol0}: 
+      Sort Functions}} documents functions that re-order arrays.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{cami0}: 
+      Array Manipulation Functions}} documents functions that manipulate arrays.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{cbsf0}: 
+      Bit-Mapped Set Functions}} documents functions that operate on sets 
+      represented as arrays of bits.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{cvco0}: 
+      Vertical Counter Functions}} documents functions that implement vertical 
+      counters.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{cafn0}: 
+      Basic Data Type Integer Utility and Arithmetic Functions}} documents 
+      utility and arithmetic functions that operate on basic (built into the 
+      compiler) character and integer types.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{cbaf0}: 
+      Basic Data Type Integer Mathematical Functions}} documents mathematical 
+      functions that operate on basic (built into the compiler) character and 
+      integer types.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{cfpa0}: 
+      Basic Data Type Fixed-Point Utility and Arithmetic Functions}} documents 
+      utility and arithmetic functions that operate on fixed-point values stored 
+      in basic (built into the compiler) character and integer types.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{cfpa1}: 
+      Basic Data Type Fixed-Point Mathematical Functions}} documents 
+      mathematical functions that operate on fixed-point values stored in basic 
+      (built into the compiler) character and integer types.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{caal1}: 
+      Basic Data Type Floating-Point Utility and Arithmetic Functions}} 
+      documents utility and arithmetic functions that operate on basic (built 
+      into the compiler) floating-point types.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{cafn1}: 
+      Basic Data Type Floating-Point Mathematical Functions}} documents 
+      mathematical functions that operate on basic (built into the compiler) 
+      floating-point types.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{claf0}: 
+      Large Integer Utility and Arithmetic Functions}} documents utility and 
+      arithmetic functions that involve large integers.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{claf1}: 
+      Large-Integer Mathematical Functions}} documents mathematical functions 
+      that involve large integers.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{cfpa2}: 
+      Large Fixed-Point Utility and Arithmetic Functions}} documents utility and 
+      arithmetic functions that operate on fixed-point values stored as large 
+      integers.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{cfpa3}: 
+      Large Fixed-Point Mathematical Functions}} documents mathematical 
+      functions that operate on fixed-point values stored as large integers.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{claf2}: 
+      Large Floating-Point Utility and Arithmetic Functions}} documents utility 
+      and arithmetic functions that perform arithmetic on floating-point types 
+      larger than basic floating-point data types.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{claf3}: 
+      Large Floating-Point Mathematical Functions}} documents utility and 
+      arithmetic functions that perform arithmetic on floating-point types 
+      larger than basic floating-point data types.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{clfi0}: 
+      Linear Filter and Control System Component Functions}} documents functions 
+      that implement classic discrete-time linear filters.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{cnfi0}: 
+      Non-Linear Filter Functions}} documents functions that implement 
+      non-linear discrete-time filters.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{crng1}: 
+      Pseudo-Random Number Generation Functions}} documents functions that generate
+      pseudo-random numbers by a variety of algorithms.
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{ccrc0}: 
+      Non-Cryptographic Hash Functions}} documents functions that calculate and 
+      manipulate CRCs, checksums, and non-cryptographic hashes.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{ccrh0}: 
+      Cryptographic Hash Functions}} documents functions that implement 
+      cryptographic hashes.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{ccip0}: 
+      Symmetric Cipher Functions}} documents symmetric cipher functions that 
+      encrypt and decrypt data.  
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{ccip1}: 
+      Asymmetric Cipher Functions}} documents asymmetric cipher functions that 
+      encrypt and decrypt data.  
+\end{itemize}
+
+\emph{\textbf{Part IV: Developer Information}} provides 
+information about building the library from source code and
+extending the library.
+
+\begin{itemize}
+\item \emph{\textbf{Chapter\postchapterwordnonstretchable{}\ref{cbpc0}: 
+      Library Development and Modification Procedures}} 
+      documents how to generate the library source code from
+      the templates, how to modify the templates, how to
+      modify the generator, how to add new processor variants,
+      how to tune the library, how to build the library, and how
+      to test the library.  Design and coding standards are also
+      documented.
+\end{itemize}
+
+\emph{\textbf{Part V: Appendices, Bibliography, and Index}} 
+provides glossaries, references, and an index.  Individuals, 
+products, companies, websites, and Internet newsgroups are 
+cited in the same framework as traditional references in 
+order to provide the reader with more resources to obtain 
+information.  
 
